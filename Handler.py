@@ -1,8 +1,8 @@
 import pygame
 import Camera
 import Tile
-from vector2 import Vector2 as vec2
-
+from vector3 import Vector3 as vec3
+import random
 
 class Handler(object):
 
@@ -19,7 +19,7 @@ class Handler(object):
         self.tiles = []
         for i in range(10):
             for j in range(10):
-                self.tiles.append(Tile.Tile(vec2(j,i), self))
+                self.tiles.append(Tile.Tile(vec3(j,i,random.randint(0,2)/20.0), self))
 
     def render(self, surface):
         for TILE in self.tiles:

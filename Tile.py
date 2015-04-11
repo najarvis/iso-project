@@ -2,7 +2,6 @@ import pygame
 import random
 from vector2 import Vector2 as vec2
 
-
 class Tile(object):
 
     def __init__(self, pos, handler):
@@ -15,5 +14,4 @@ class Tile(object):
 
     def render(self, surface):
         surface.blit(self.image, 
-                self.handler.camera.offset + vec2((16*self.pos.x)-(16*self.pos.y),
-                                                (8*self.pos.x)+(8*self.pos.y)))
+                self.handler.camera.offset + vec2((16*self.pos.x)-(16*self.pos.y), (8*self.pos.x)+(8*self.pos.y)-(32*self.pos.z)))
