@@ -7,8 +7,12 @@ class Tile(object):
     def __init__(self, pos, handler):
         self.handler = handler
         self.pos = pos
-        if random.randint(0, 1):
+        if self.pos.z > 1.1:
+            self.image = handler.snow_tile_image
+        elif self.pos.z > .8:
             self.image = handler.rock_tile_image
+        elif self.pos.z < .4:
+            self.image = handler.water_tile_image
         else:
             self.image = handler.base_tile_image
 
