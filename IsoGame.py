@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 import random
 import Handler
 
@@ -16,11 +16,13 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                done = True
+                pygame.quit()
+                sys.exit()
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    done = True
+                    pygame.quit()
+                    sys.exit()
 
                 if event.key == pygame.K_F2:
                     pygame.image.save(screen, "screenshot.png")
