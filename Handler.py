@@ -41,6 +41,7 @@ class Handler(object):
                 self.tiles.append(Tile.Tile(vec3(i,j,previous_offset), self))
 
         print max_height
+
     def render(self, surface):
         for TILE in self.tiles:
             TILE.render(surface)
